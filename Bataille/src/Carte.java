@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.lang.Math;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Carte {
 
@@ -72,6 +72,9 @@ public class Carte {
     }
 
     public static ArrayList<Carte> creationPaquet() {
+        // Nombre aléatoire entre 7 et 20
+        int randomNum = ThreadLocalRandom.current().nextInt(20, 35 + 1);
+
         ArrayList<Carte> paquet= new ArrayList<Carte>();
             // Créer le paquet
         for(int i=0; i<valeur.length; i++){
@@ -80,7 +83,7 @@ public class Carte {
             }
         }
             // Mélanger le paquet
-        for(int i=0; i<11; i++) {
+        for(int i=0; i<randomNum; i++) {
             Collections.shuffle(paquet);
         }
 
