@@ -1,23 +1,28 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 
-abstract public class LectureFichier {
-    protected File fichier;
-    protected ArrayList<String> contenuFichier;
+public class LectureFichier {
+    private File fichier;
+    private ArrayList<String> contenuFichier;
+
+// Constructeurs
+    public LectureFichier() {
+        this.contenuFichier = new ArrayList<>();
+    }
+    public LectureFichier(String nomFichier) {
+        this.fichier = new File(nomFichier);
+        this.contenuFichier = new ArrayList<>();
+    }
 
 // Getters et Seters
-    protected File getFichier() { return this.fichier; }
-    protected void setFichier(File fichier) { this.fichier = fichier; }
+    public File getFichier() { return this.fichier; }
+    public void setFichier(File fichier) { this.fichier = fichier; }
 
-    protected ArrayList<String> getContenuFichier() { return contenuFichier; }
-    protected void setContenuFichier(ArrayList<String> contenuFichier) { this.contenuFichier = contenuFichier; }
-
+    public ArrayList<String> getContenuFichier() { return contenuFichier; }
+    public void setContenuFichier(ArrayList<String> contenuFichier) { this.contenuFichier = contenuFichier; }
 
 // Méthodes
-    protected void lireFichier() {
+    public void lireFichier() {
         boolean fichierExiste = this.getFichier().exists();
         File fichier = this.getFichier();
         if (fichierExiste) {
@@ -37,10 +42,14 @@ abstract public class LectureFichier {
             System.out.println("Le fichier ["+ this.getFichier() +"] n'existe pas.");
         }
     }
-    protected void afficherContenu() {
+    public void afficherContenu() {
         int tailleContenu = this.getContenuFichier().size();
         for(int i=0; i<tailleContenu; i++) {
             System.out.println(this.getContenuFichier().get(i));
         }
     }
+
+/*
+    File : exists() : Teste si le fichier ou le répertoire désigné par ce chemin abstrait existe.
+ */
 }
