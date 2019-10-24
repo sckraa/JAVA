@@ -25,7 +25,7 @@ public class FichierTexte extends  LectureFichier implements LectureFichierTexte
             }
         }
         for(int i=0; i<this.getContenuFichier().size(); i++) {
-            System.out.println(this.getContenuFichier().get(i));
+            System.out.print(this.getContenuFichier().get(i));
         }
     }
 

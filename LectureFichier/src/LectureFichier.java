@@ -43,4 +43,15 @@ abstract public class LectureFichier {
             System.out.println(this.getContenuFichier().get(i));
         }
     }
+    protected ArrayList<String> lireFichierCaractere() {
+        ArrayList<String> contenu = new ArrayList<String>();
+
+        for(int i=this.getContenuFichier().size()-1; i>=0; i--) {
+            for(int j=this.getContenuFichier().get(i).length()-1; j>=0; j--) {
+                contenu.add(Character.toString(this.getContenuFichier().get(i).charAt(j)));
+            }
+        }
+
+        return contenu;
+    }
 }
