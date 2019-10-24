@@ -1,35 +1,59 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class FichierTexte extends  LectureFichier implements LectureFichierTexte{
+abstract public class FichierTexte {
+    protected File fichier;
+    protected ArrayList<String> contenuFichier;
 
-// Constructeurs
-    public FichierTexte() {
-        this.contenuFichier = new ArrayList<>();
-    }
-    public FichierTexte(String nomFichier) {
-        this.fichier = new File(nomFichier);
-        this.contenuFichier = new ArrayList<>();
-    }
+// Getters et Seters
+    protected File getFichier() { return this.fichier; }
+    protected void setFichier(File fichier) { this.fichier = fichier; }
+
+    protected ArrayList<String> getContenuFichier() { return contenuFichier; }
+    protected void setContenuFichier(ArrayList<String> contenuFichier) { this.contenuFichier = contenuFichier; }
+
 
 // Méthodes
-    public void lectureInversee() {
-        for(int i=this.getContenuFichier().size()-1; i>=0; i--) {
+    protected void lireFichier() {
+        boolean fichierExiste = this.getFichier().exists();
+        File fichier = this.getFichier();
+        if (fichierExiste) {
+            try {
+                FileInputStream fichierFlux = new FileInputStream(fichier);
+                InputStreamReader lectureFichier = new InputStreamReader(fichierFlux);
+                BufferedReader memoire = new BufferedReader(lectureFichier);
+                String ligneFichier = "";
+                while ((ligneFichier=memoire.readLine()) != null) {
+                    this.getContenuFichier().add(ligneFichier);
+                }
+                memoire.close();
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+        } else {
+            System.out.println("Le fichier ["+ this.getFichier() +"] n'existe pas.");
+        }
+    }
+    protected void afficherContenu() {
+        int tailleContenu = this.getContenuFichier().size();
+        for(int i=0; i<tailleContenu; i++) {
             System.out.println(this.getContenuFichier().get(i));
         }
     }
-    public void lecturePalindromique() {
+    protected ArrayList<String> lireFichierCaractere() {
+        ArrayList<String> contenu = new ArrayList<String>();
+
         for(int i=this.getContenuFichier().size()-1; i>=0; i--) {
             for(int j=this.getContenuFichier().get(i).length()-1; j>=0; j--) {
-                this.getContenuFichier().add(Character.toString(this.getContenuFichier().get(i).charAt(j)));
+                contenu.add(Character.toString(this.getContenuFichier().get(i).charAt(j)));
             }
         }
-        for(int i=0; i<this.getContenuFichier().size(); i++) {
-            System.out.print(this.getContenuFichier().get(i));
-        }
-    }
 
-/*
-    File : exists() : Teste si le fichier ou le répertoire désigné par ce chemin abstrait existe.
- */
+        return contenu;
+    }
+    abstract public void lectureInversee();
+    abstract public void lecturePalindromique();
 }

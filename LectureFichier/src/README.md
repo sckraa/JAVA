@@ -1,2 +1,3 @@
 # Lecture Fichier
-![SchemaDiagram](https://user-images.githubusercontent.com/45497492/66950522-d4d49280-f058-11e9-8e87-0ed9066a6e32.png)
+![SchemaDiagram](https://user-images.githubusercontent.com/45497492/67529456-83617e80-f6bc-11e9-918b-1090ceff06dd.png)
+
