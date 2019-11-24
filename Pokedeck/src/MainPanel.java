@@ -23,11 +23,11 @@ public class MainPanel {
 
         while ( Integer.parseInt( choice ) != 0 ) {
             new MainPanel();
-            UserChoice();
+            userChoice();
         }
     }
 
-    public void UserChoice() {
+    public void userChoice() {
         this.choice = scanner.nextLine();
         int userChoice = Integer.parseInt( this.choice );
 

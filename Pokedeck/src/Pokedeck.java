@@ -16,13 +16,16 @@ public class Pokedeck {
         Deck pokedeck = new Deck();
 
         //Creation of cards
-        Card pika = new EnergyCard( 1, "pika", EnergyType.Lightning, "mini description" );
-        Card toto = new EnergyCard( 2, "toto", EnergyType.Fighting, "mini description");
+        Card pika = new PokemonCard( 1, "Pikachu", 100, PokemonStage.Basic, EnergyType.Lightning, "best pokemon");
 
-        Card stadium = new TrainerCard( 3, "Stadium", TrainerType.Stadium, "description");
+        Card lightning = new EnergyCard( 2, "pika", EnergyType.Lightning, "mini description" );
+        Card fighting = new EnergyCard( 3, "toto", EnergyType.Fighting, "mini description");
+
+        Card stadium = new TrainerCard( 4, "Stadium", TrainerType.Stadium, "description");
 
         pokedeck.addCard(pika);
-        pokedeck.addCard(toto);
+        pokedeck.addCard(lightning);
+        pokedeck.addCard(fighting);
         pokedeck.addCard(stadium);
 
         pokedeck.showDeck();
