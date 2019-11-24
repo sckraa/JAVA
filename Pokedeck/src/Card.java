@@ -1,4 +1,4 @@
-public class Card {
+public abstract class Card {
     private Integer id;
     private String name;
     private String type;
@@ -39,8 +39,5 @@ public class Card {
     }
 
     // toString()
-    public String toString() {
-        String infoCard = "[ Card ID: " + this.id + ", Card Name : " + this.name + ", Card Type : " + this.type + ", Card Description : " + this.description + " ]";
-        return infoCard;
-    }
+    public abstract String toString();
 }

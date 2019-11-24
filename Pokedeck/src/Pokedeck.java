@@ -10,25 +10,18 @@ public class Pokedeck {
 
         //menu.start();
 
-        Card pika = new Card(1,"pika", "electro", "powerful card");
-        Card toto = new Card(2,"toto", "feu", "powerful card");
-        Card titi = new Card(3,"titi", "vent", "powerful card");
-/*
-        System.out.println( pika.toString() );
-        System.out.println( toto.toString() );
-        System.out.println( titi.toString() );
-*/
         System.out.println("----- ------ -----");
 
+        // Creation of a deck
         Deck pokedeck = new Deck();
+
+        //Creation of cards
+        Card pika = new EnergyCard( 1, "pika", EnergyType.Lightning, "mini description" );
+        Card toto = new EnergyCard( 2, "toto", EnergyType.Fighting, "mini description");
+
         pokedeck.addCard(pika);
         pokedeck.addCard(toto);
-        pokedeck.addCard(titi);
 
-        pokedeck.showDeck();
-
-        // Delete card
-        pokedeck.deleteCard(1);
         pokedeck.showDeck();
 
     }
