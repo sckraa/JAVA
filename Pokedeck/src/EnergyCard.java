@@ -1,8 +1,8 @@
 public class EnergyCard extends Card {
     private EnergyType energyType;
 
-    public EnergyCard ( Integer id, String name, EnergyType energyType, String description) {
-        super ( id, name, String.valueOf(energyType), description );
+    public EnergyCard ( Integer id, String name, EnergyType energyType, String description ) {
+        super ( id, name, String.valueOf( energyType ), description );
         this.energyType = energyType;
     }
 

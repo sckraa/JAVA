@@ -19,8 +19,11 @@ public class Pokedeck {
         Card pika = new EnergyCard( 1, "pika", EnergyType.Lightning, "mini description" );
         Card toto = new EnergyCard( 2, "toto", EnergyType.Fighting, "mini description");
 
+        Card stadium = new TrainerCard( 3, "Stadium", TrainerType.Stadium, "description");
+
         pokedeck.addCard(pika);
         pokedeck.addCard(toto);
+        pokedeck.addCard(stadium);
 
         pokedeck.showDeck();
 
