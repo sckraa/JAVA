@@ -3,9 +3,11 @@ import java.util.Scanner;
 public class MainPanel {
     private Scanner scanner;
     private String choice = "1";
+    private Deck deckUser;
+    private SecondPanel secondPanel;
 
     public MainPanel() {
-        System.out.println("\t Menu \t");
+        System.out.println("---------- Menu ----------");
         System.out.println("0 - Exit");
         System.out.println("1 - Display deck");
         System.out.println("2 - Add Card");
@@ -13,8 +15,10 @@ public class MainPanel {
         System.out.println("4 - Search Card");
     }
 
-    public MainPanel ( Scanner scanner ) {
+    public MainPanel ( Scanner scanner, Deck deck ) {
         this.scanner = scanner;
+        secondPanel = new SecondPanel( scanner );
+        deckUser = deck;
     }
 
     public void start () {
@@ -41,7 +45,7 @@ public class MainPanel {
         } else if ( userChoice == 1 ) {
             System.out.println( "Choice = 1" );
         } else if ( userChoice == 2 ) {
-            System.out.println( "Choice = 2" );
+            secondPanel.addCard( deckUser );
         } else if ( userChoice == 3 ) {
             System.out.println( "Choice = 3" );
         } else if ( userChoice == 4 ) {

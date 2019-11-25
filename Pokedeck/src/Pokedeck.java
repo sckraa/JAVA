@@ -2,14 +2,16 @@ import java.util.Scanner;
 
 public class Pokedeck {
     public static void main(String[] args) {
-        //System.out.println("POKEDECK v1-Terminal");
+        System.out.println("POKEDECK v1-Terminal");
+        Deck deck = new Deck();
+        Scanner scanner = new Scanner(System.in);
 
-        //Scanner scanner = new Scanner(System.in);
+        MainPanel menu = new MainPanel( scanner, deck);
 
-        //MainPanel menu = new MainPanel(scanner);
+        menu.start();
 
-        //menu.start();
-
+        deck.showDeck();
+/*
         System.out.println("----- ------ -----");
 
         // Creation of a deck
@@ -29,6 +31,6 @@ public class Pokedeck {
         pokedeck.addCard(stadium);
 
         pokedeck.showDeck();
-
+*/
     }
 }

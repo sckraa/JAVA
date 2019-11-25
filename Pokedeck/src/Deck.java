@@ -28,4 +28,13 @@ public class Deck {
             System.out.println( card.toString() );
         }
     }
+
+    public boolean idBusy( Integer id ) {
+        for ( Card card : deck ) {
+            if ( card.getId() == id ) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
