@@ -1,36 +1,30 @@
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class Pokedeck {
     public static void main(String[] args) {
+
+        // Swing Panel
+        //Menu swingMenu = new Menu();
+
+        // Terminal
         System.out.println("POKEDECK v1-Terminal");
-        Deck deck = new Deck();
+        //Card carte1 = new TrainerCard(1, "carte1", "Trainer" ,"trainer", TrainerType.Item);
+        //Card carte2 = new EnergyCard(2, "carte2", "Energy", "energy", EnergyType.Darkness);
+        //Card carte3 = new PokemonCard(3, "carte3", "Pokemon", "pokemon", 90, PokemonStage.Stage2, EnergyType.Lightning);
+
+        //Deck deck = new Deck();
+
+        //deck.addCard(carte1);
+        //deck.addCard(carte2);
+        //deck.addCard(carte3);
+
         Scanner scanner = new Scanner(System.in);
 
-        MainPanel menu = new MainPanel( scanner, deck);
+        MainPanel menu = new MainPanel( scanner );
 
         menu.start();
 
-        deck.showDeck();
-/*
-        System.out.println("----- ------ -----");
-
-        // Creation of a deck
-        Deck pokedeck = new Deck();
-
-        //Creation of cards
-        Card pika = new PokemonCard( 1, "Pikachu", 100, PokemonStage.Basic, EnergyType.Lightning, "best pokemon");
-
-        Card lightning = new EnergyCard( 2, "pika", EnergyType.Lightning, "mini description" );
-        Card fighting = new EnergyCard( 3, "toto", EnergyType.Fighting, "mini description");
-
-        Card stadium = new TrainerCard( 4, "Stadium", TrainerType.Stadium, "description");
-
-        pokedeck.addCard(pika);
-        pokedeck.addCard(lightning);
-        pokedeck.addCard(fighting);
-        pokedeck.addCard(stadium);
-
-        pokedeck.showDeck();
-*/
+        //deck.showDeck();
     }
 }

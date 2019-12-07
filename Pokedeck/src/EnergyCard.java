@@ -1,12 +1,19 @@
 public class EnergyCard extends Card {
+
+    private static final long serialVersionUID = 4L;
     private EnergyType energyType;
 
-    public EnergyCard ( Integer id, String name, EnergyType energyType, String description ) {
-        super ( id, "[X]", String.valueOf( energyType ), description );
+    public EnergyCard ( Integer id, String name, String type, String description, EnergyType energyType ) {
+        super ( id, "[X]", type, description );
         this.energyType = energyType;
     }
 
+    // Getter
+    public EnergyType getEnergyType() {
+        return this.energyType;
+    }
+
     public String toString() {
-        return "[ Card ID: " + this.getId() + ", Card Name : " + this.getName() + ", Card Type : " + this.getType() + ", Card Description : " + this.getDescription() + " ]";
+        return "\t[ Card ID: " + this.getId() + " | Card Name : " + this.getName() + " | Card Type : " + this.getType() + " | Energy Type : " + this.getEnergyType() + " | Card Description : " + this.getDescription() + " ]";
     }
 }

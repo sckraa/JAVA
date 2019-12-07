@@ -1,12 +1,16 @@
-public abstract class Card {
-    private Integer id;
+import java.io.Serializable;
+
+public abstract class Card implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    private int id;
     private String name;
     private String type;
     private String description;
 
     // Builders
     public Card() {
-        this.id = null;
+        this.id = 0;
         this.name = "undefined";
         this.type = "undefined";
         this.description = "undefined";
