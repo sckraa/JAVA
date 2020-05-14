@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TaskList</string>
+    <string name="tab_text_1">Tasks</string>
+    <string name="tab_text_2">Add</string>
+    <string name="tab_text_3">Calendar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="task_fragment">Task Fragment</string>
+    <string name="add_fragment">Add Fragment</string>
+    <string name="calendar_fragment">Calendar Fragment</string>
+</resources>

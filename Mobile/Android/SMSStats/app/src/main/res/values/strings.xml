@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SMS-Stats-Bomber</string>
+
+    <string name="autoreply_title">Add an auto-reply</string>
+    <string name="autoreply_message">Message received</string>
+    <string name="autoreply_answer">Auto-reply</string>
+    <string name="autoreply_save">Add</string>
+
+
+
+    <string name="bomber">Bomber :</string>
+    <string name="bomber_message">Message to send</string>
+    <string name="bomber_phone">Phone number</string>
+    <string name="bomber_count">Count of messages</string>
+    <string name="bomber_send">Send</string>
+
+    <string name="save_answer_list">Automatic responses  :</string>
+    <string name="contact_name">Name</string>
+    <string name="contact_phone">Number</string>
+    <string name="contact_stat">Statistics</string>
+</resources>
