@@ -11,6 +11,8 @@ export default class SelectTimer extends Component {
                 underlineColorAndroid='transparent'
                 keyboardType='numeric'
                 maxLength={ 2 }
+                //defaultValue={ this.props.value }
+                onChangeText={ this.props.onChangeText }
             />
         )
     }

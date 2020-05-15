@@ -6,7 +6,7 @@ export default class Cta extends Component {
     render() {
         return(
             <View style={ styles.buttonsView }>
-                <Button title={ this.props.title }  />
+                <Button title={ this.props.title } onPress={ this.props.onPress } />
             </View>
         )
     }
