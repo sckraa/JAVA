@@ -5,10 +5,7 @@ export default function MovieItem(props){
   const movie = props.movie;
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={{uri: "image"}}
-      />
+      <Image style={styles.image} source={{uri: movie.poster_path}} />
       <View style={styles.contentContainer}>
         <View style={styles.headerContainer}>
           <Text style={styles.title}>{movie.title}</Text>

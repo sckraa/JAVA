@@ -7,7 +7,7 @@ import users from '../helpers/usersData'
 
 export default function SettingsScreen() {
   const user = users[users.length-1]
-  console.log(users)
+  
   return (
       <View style={ styles.container }>
         <Text>Hello {user.login}</Text>

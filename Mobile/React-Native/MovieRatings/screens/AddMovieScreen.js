@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+
 import FormMovie from '../components/FormMovie';
 
 export default function AddMovieScreen() {
@@ -38,5 +39,8 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
       marginTop: 25,
       textAlign: 'center'
-  }
+  },
+  optionIconContainer: {
+    marginRight: 12,
+  },
 });

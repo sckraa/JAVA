@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {StyleSheet, View, Text, TextInput, Button, Alert} from 'react-native';
+
 import movies from '../helpers/moviesData';
 
 export default class FormMovie extends React.Component {
@@ -12,6 +13,15 @@ export default class FormMovie extends React.Component {
             movieDate: "",
             formValid: false,
         }
+
+        this.verifyForm = this.verifyForm.bind(this)
+        this.addMovieToList = this.addMovieToList.bind(this)
+        this.onChangeTitle = this.onChangeTitle.bind(this)
+        this.onChangeSummary = this.onChangeSummary.bind(this)
+        this.onChangeDate = this.onChangeDate.bind(this)
+        this.onChangeNote = this.onChangeNote.bind(this)
+        this.onChangePoster = this.onChangePoster.bind(this)
+
     }
 
     verifyForm() {
@@ -49,6 +59,7 @@ export default class FormMovie extends React.Component {
             movieDate: "",
             formValid: false
         })
+        
     }
 
     onChangeTitle(title) {
@@ -102,7 +113,7 @@ export default class FormMovie extends React.Component {
                     />
                 </View>
 
-                { this.state.formValid ? "" : this.verifyForm()}
+                { this.state.formValid ? <Text style={styles.valid}>The fields are well filled</Text> : this.verifyForm()}
             </View>
         )
     }
@@ -133,9 +144,21 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     errorForm: {
-        color: "red",
-        textAlign: 'center',
-        marginVertical: 20,
-        fontSize: 20
+        marginHorizontal: 15,
+        marginVertical: 25,
+        textAlign: "center",
+        fontSize: 20,
+        paddingHorizontal: 15,
+        paddingVertical: 15,
+        backgroundColor: "red"
+    },
+    valid: {
+        marginHorizontal: 15,
+        marginVertical: 25,
+        textAlign: "center",
+        fontSize: 20,
+        paddingHorizontal: 15,
+        paddingVertical: 15,
+        backgroundColor: "green"
     }
 })
